@@ -72,7 +72,7 @@ public class ExecuteParameterizedQuery extends CustomJavaAction<java.util.List<I
 		// BEGIN USER CODE
 		IMetaObject metaObject = Core.getMetaObject(this.resultObjectType);
 		List<IMendixObject> resultList = connector.executeQuery(this.jdbcUrl, this.userName, this.password,
-				metaObject, this.sql, this.getContext());
+				metaObject, this.sql.toString(), this.getContext());
 		logNode.trace(String.format("Result list count: %d", resultList.size()));
 
 		return resultList;
